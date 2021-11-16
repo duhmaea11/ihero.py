@@ -32,4 +32,5 @@ async def update_users(id,user: User):
     
 @router.delete('/user/{id}')
 async def delete_users(id,user: User):
-     return userEntity(conn.user.find_one_and_delete({"_id":ObjectId(id)}))
+     userEntity(conn.user.find_one_and_delete({"_id":ObjectId(id)}))
+     return {"User deleted successfully"}

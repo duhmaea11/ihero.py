@@ -32,4 +32,5 @@ async def update_heroes(id,hero: Hero):
     
 @router.delete('/hero/{id}')
 async def delete_heroes(id,hero: Hero):
-     return heroEntity(conn.hero_registration.find_one_and_delete({"_id":ObjectId(id)}))
+     heroEntity(conn.hero_registration.find_one_and_delete({"_id":ObjectId(id)}))
+     return {"Hero deleted successfully"}
